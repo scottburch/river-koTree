@@ -1,0 +1,28 @@
+.koTree .treeNode:hover {
+    background: rgba(211, 234, 255, 0.3);
+}
+
+.koTree a {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.koTree .expander {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+}
+
+.koTree .expander.expandable {
+    background: url('../images/arrow_right.png');
+}
+
+.koTree .expander.expanded {
+    background-image: url('../images/arrow_down.png');
+}
+
+.koTree li ul {
+    padding-left: 10px;
+}

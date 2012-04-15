@@ -1,0 +1,15 @@
+<div class="koTree">
+    <!-- ko if:root -->
+        <ul data-bind="template: {name: 'nodeTemplate', data: root}"></ul>
+    <!-- /ko -->
+</div>
+
+<script type="text/html" id="nodeTemplate">
+    <li data-bind="visible:visible">
+        <a href="#" class="expander" data-bind="click:expand,css:{expanded:expanded,expandable:expandable}"></a>
+        <input type="checkbox" data-bind="visible:showCheckbox, checked:checked"/>
+        <a href="#" class="treeNode hostTreeNode" data-bind="text:text, event:{dragstart:handleDragStart}, attr:{draggable:draggable}"></a>
+        <span data-bind="visible:expanded() && !fetched()">(loading)</span>
+        <ul data-bind="visible:expanded, template:{name:'nodeTemplate', foreach:children}"></ul>
+    </li>
+</script>
